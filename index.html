@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
+  <div>
     <header class="page-header">
       <div class="container">
         <nav class="page-nav">
@@ -52,7 +52,7 @@
 
     <main>
       <section class="first-section">
-        <div class="container">
+        <div class="container relative-container">
           <h1 class="main-title">Effective Solutions for Your Business</h1>
           <button class="service" type="button">Order Service</button>
         </div>
@@ -423,7 +423,6 @@
           <a class="logo tagline-logo" href="./index.html"
             >Web<span class="footer-logo">Studio</span></a
           >
-
           <p class="tagline-text">
             Increase the flow of customers and sales for your business with
             digital marketing & growth solutions.
@@ -478,7 +477,79 @@
             </li>
           </ul>
         </div>
+        <div class="subscribe">
+          <p class="subscribe-title">Subscribe</p>
+          <div class="subscribe-interactive">
+          <form action="">
+            <label for="">
+              <input class="tagline-input" type="text" name="email" placeholder="E-mail">
+            </label>
+          </form>
+          <button class="subscribe-button" type="submit">Subscribe 
+            <svg width="24" height="24">
+              <use href="./images/icons.svg#icon-Frame-3" />
+            </svg>
+          </button>
+          </div>
+        </div>
       </div>
     </footer>
+
+    <div class="backdrop is-open">
+      <div class="modal">
+        <button class="close-button" type="button">
+          <svg class="close-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close-black"></use>
+          </svg>
+        </button>
+        <p class="form-title">Leave your contacts and we will call you back</p>
+        <form class="form-call-back" name="form" action="">
+          <label
+            >Name
+            <div class="field-container">
+              <svg class="form-icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-person-black"></use>
+              </svg>
+              <input class="form-field" type="text" name="email" required />
+            </div>
+          </label>
+          <label
+            >Phone
+            <div class="field-container">
+              <svg class="form-icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-phone-black"></use>
+              </svg><input class="form-field" type="text" name="phone" required />
+            </div>
+          </label>
+          <label
+            >Email
+            <div class="field-container">
+              <svg class="form-icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-email-black"></use>
+                </svg><input class="form-field" type="text" name="email" required />
+            </div>
+          </label>
+          <label for=""
+            >Comment<textarea
+              class="form-field comment"
+              name="Comment"
+              id=""
+              placeholder="Text-input"
+            ></textarea>
+          </label>
+          <div class="checkbox-container">
+            <input  type="checkbox" name="accept" value="yes" /> 
+                <svg class="form-icon-checkbox" width="16" height="16">
+                <use href="./images/icons.svg#icon-Checkbox"></use>
+                </svg>
+              <label class="checkbox-label" for="accept">
+              <p>I accept the terms and conditions of the<a class="modal-link" href=""> Privacy Policy</a></p>
+             </label>
+          </div>
+        </form>
+        <button class="modal-button" type="submit">Send</button>
+      </div>
+    </div>
+  
   </body>
 </html>
