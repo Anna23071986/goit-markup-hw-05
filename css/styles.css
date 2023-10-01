@@ -28,11 +28,11 @@ img {
   display: block;
 }
 
-button {
+/* button {
   font-family: inherit;
   color: currentColor;
   font-size: 100%;
-}
+} */
 
 .container {
   width: 1158px;
@@ -494,11 +494,11 @@ header .container {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #ffffff;
+  margin-bottom: 16px;
 }
 
-.subscribe-interactive {
+.subscribe-form {
   display: flex;
-  margin-top: 16px;
   gap: 24px;
 }
 
@@ -508,15 +508,20 @@ header .container {
   border: 1px solid #ffffff;
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px #00000026;
-  background-color: #2e2f4214;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  color: #ffffff;
 }
 
 .tagline-input::placeholder {
   color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  line-height: 2;
-  padding-left: 16px;
+  /* font-size: 12px; */
+  /* letter-spacing: 0.04em; */
+  /* line-height: 2; */
+  /* padding-left: 16px; */
 }
 
 .subscribe-button {
@@ -527,18 +532,23 @@ header .container {
   letter-spacing: 0.04em;
   line-height: 1.5;
   cursor: pointer;
+  font-family: "Roboto" sans-serif;
+  align-items: center;
+  justify-content: center;
   display: flex;
-  gap: 16px;
   min-width: 165px;
   height: 40px;
   border: none;
   border-radius: 4px;
-  padding: 8px 24px;
 }
 
-.relative-container {
-  position: relative;
+.subscribe-icon {
+  margin-left: 16px;
 }
+
+/* .relative-container {
+  position: relative;
+} */
 
 .backdrop {
   position: fixed;
@@ -546,37 +556,35 @@ header .container {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: linear-gradient(
-    rgba(46, 47, 66, 0.7),
-    rgba(46, 47, 66, 0.7)
-  );
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  opacity: 0;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0; */
 }
 
-.is-open {
+/* .is-open {
   visibility: visible;
-}
+} */
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 408px;
-  height: 584px;
-  padding: 72px 24px 24px 24px;
+  min-height: 584px;
+  box-shadow: 0px 1px 1px 0px #00000024, 0px 1px 3px 0px #0000001f,
+    0px 1px 2px 0px #00000033;
   border-radius: 4px;
-  background-color: #fff;
-  color: #434455;
+  background-color: #fcfcfc;
   transform: translate(-50%, -50%);
-
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
+  /* color: #434455; */
 }
 
 .close-button {
@@ -618,70 +626,141 @@ header .container {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  color: #2e2f42;
   margin-bottom: 16px;
 }
 
-.form-call-back {
+/* .form-call-back {
   display: block;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
   text-align: left;
+} */
+
+.field-container {
+  margin-bottom: 8px;
+}
+
+.mark {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: block;
+  margin-bottom: 4px;
 }
 
 .form-field {
-  display: flex;
+  /* display: flex; */
   border: 1px solid #2e2f4266;
   border-radius: 4px;
   width: 100%;
-  margin-bottom: 8px;
-  margin-top: 4px;
+  /* margin-bottom: 8px; */
+  /* margin-top: 4px; */
   height: 40px;
+  background-color: transparent;
+  padding-left: 38px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field:focus {
   border-color: #4d5ae5;
 }
 
-.field-container {
+.input-container {
   position: relative;
 }
 
 .form-icon {
   position: absolute;
-  top: 11px;
+  top: 50%;
   left: 16px;
+  transform: translateY(-50%);
+  transform: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.comment {
-  height: 120px;
+.form-field:focus .form-icon {
+  fill: #4d5ae5;
+}
+
+.comment-container {
   margin-bottom: 16px;
 }
 
-.comment::placeholder {
+.form-field-comment {
+  width: 100%;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  color: rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* margin-bottom: 16px; */
+}
+
+.form-field-comment:focus {
+  border-color: #4d5ae5;
+}
+
+/* .form-field-comment::placeholder {
   position: absolute;
   color: #2e2f4266;
   top: 8px;
   left: 16px;
-}
+} */
 
 .checkbox-container {
-  display: flex;
-  gap: 8px;
+  /* display: flex;
+  gap: 8px; */
   margin-bottom: 24px;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   visibility: hidden;
   position: absolute;
+} */
+
+.checkbox-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
 
-.form-icon-checkbox {
+.checkbox-mark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #2e2f4266;
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  fill: transparent;
+}
+
+.visually-hidden:checked .checkbox-mark {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+/* .form-icon-checkbox {
   fill: none;
   border: 1px solid #2e2f4266;
   border-radius: 2px;
-}
+} */
 
 .modal-link {
   color: #4d5ae5;
@@ -700,10 +779,11 @@ input[type="checkbox"] {
   margin: 0 auto;
   min-width: 169px;
   height: 56px;
+  font-family: "Roboto", sans-serif;
   border: none;
   border-radius: 4px;
-  padding: 16px 32px;
-  box-shadow: 0px 4px 4px 0px #00000026;
+  /* padding: 16px 32px; */
+  /* box-shadow: 0px 4px 4px 0px #00000026; */
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
